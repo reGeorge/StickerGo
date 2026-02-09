@@ -1,0 +1,111 @@
+// Flex 布局
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// 文本省略
+@mixin text-ellipsis($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// 玻璃拟态
+@mixin glassmorphism($bg-opacity: 0.8, $blur: 20px) {
+  background: rgba(255, 255, 255, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+// 渐变卡片
+@mixin gradient-card($gradient, $shadow) {
+  background: $gradient;
+  box-shadow: $shadow;
+  border-radius: $radius-lg;
+  color: white;
+}
+
+// 按钮按压效果
+@mixin button-active {
+  &:active {
+    transform: scale(0.95);
+    transition: transform $transition-fast;
+  }
+}
+
+// 卡片悬停效果
+@mixin card-hover {
+  transition: all $transition-base;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// 动画淡入
+@mixin fade-in($duration: 0.2s) {
+  animation: fadeIn $duration ease-out;
+}
+
+// 动画弹跳
+@mixin pop($duration: 0.3s) {
+  animation: pop $duration cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+// 清除浮动
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// 绝对居中
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 响应式断点（小程序用 rpx，这里仅作参考）
+@mixin mobile {
+  @media (max-width: 750rpx) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 751rpx) and (max-width: 1200rpx) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1201rpx) {
+    @content;
+  }
+}

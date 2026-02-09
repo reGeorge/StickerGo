@@ -1,0 +1,181 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.stats-page {
+  min-height: 100vh;
+  padding: 16rpx 16rpx 180rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// 概览卡片
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rpx;
+  margin-bottom: $spacing-xl;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stat-card {
+  background: $bg-white;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  @include flex-center;
+  @include flex-column;
+  box-shadow: $shadow-sm;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &.income {
+    background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+    color: $bg-white;
+
+    .stat-value {
+      color: $bg-white;
+    }
+  }
+
+  &.expense {
+    background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+    color: $bg-white;
+
+    .stat-value {
+      color: $bg-white;
+    }
+  }
+
+  &.growth {
+    background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+    color: $bg-white;
+  }
+}
+
+.stat-label {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  opacity: 0.9;
+  margin-bottom: $spacing-xs;
+  text-align: center;
+  width: 100%;
+  @include text-ellipsis(1);
+}
+
+.stat-value {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-black;
+  text-align: center;
+  width: 100%;
+  @include text-ellipsis(1);
+
+  &.positive {
+    color: $color-success;
+  }
+
+  &.negative {
+    color: $color-error;
+  }
+}
+
+// 图表区域
+.chart-section {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  box-shadow: $shadow-sm;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.chart-container {
+  height: 400rpx;
+  background: #F9FAFB;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-placeholder {
+  text-align: center;
+}
+
+.placeholder-text {
+  display: block;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $text-tertiary;
+  margin-bottom: $spacing-xs;
+}
+
+.placeholder-sub {
+  font-size: $font-size-xs;
+  color: $text-tertiary;
+}
+
+// 荣誉殿堂
+.honor-section {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.honor-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.honor-card {
+  background: #FEF3C7;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  @include flex-center;
+  @include flex-column;
+  border: 2rpx solid #FCD34D;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.honor-icon {
+  font-size: 64rpx;
+  margin-bottom: $spacing-xs;
+}
+
+.honor-label {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: #F59E0B;
+  margin-bottom: $spacing-xs;
+  text-align: center;
+  width: 100%;
+  @include text-ellipsis(1);
+}
+
+.honor-value {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-black;
+  color: #B45309;
+  text-align: center;
+  width: 100%;
+  @include text-ellipsis(1);
+}

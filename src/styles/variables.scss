@@ -1,0 +1,80 @@
+// 主题色
+$primary-pink: #EC4899;
+$primary-rose: #F43F5E;
+$primary-purple: #8B5CF6;
+$primary-indigo: #6366F1;
+
+// 背景色
+$bg-white: #FFFFFF;
+$bg-blue-light: #F0F4FF;
+$bg-pink-light: #FFF5F7;
+$bg-gray: #FAFAFA;
+
+// 文字色
+$text-primary: #1F2937;
+$text-secondary: #6B7280;
+$text-tertiary: #9CA3AF;
+$text-light: #F3F4F6;
+
+// 功能色
+$color-success: #10B981;
+$color-error: #EF4444;
+$color-warning: #F59E0B;
+$color-info: #3B82F6;
+
+// 渐变色
+$gradient-primary: linear-gradient(135deg, $primary-pink 0%, $primary-rose 50%, $primary-purple 100%);
+$gradient-pink: linear-gradient(135deg, #EC4899 0%, #F43F5E 100%);
+$gradient-purple: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+$gradient-blue: linear-gradient(135deg, #3B82F6 0%, #6366F1 100%);
+
+// 阴影
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-pink: 0 10px 15px -3px rgba(236, 72, 153, 0.3);
+$shadow-purple: 0 10px 15px -3px rgba(139, 92, 246, 0.3);
+
+// 圆角
+$radius-sm: 16px;
+$radius-md: 24px;
+$radius-lg: 32px;
+$radius-xl: 48px;
+$radius-full: 9999px;
+
+// 间距
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+
+// 字体
+$font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-size-xs: 16px;
+$font-size-sm: 20px;
+$font-size-base: 24px;
+$font-size-lg: 28px;
+$font-size-xl: 32px;
+$font-size-2xl: 36px;
+$font-size-3xl: 56px;
+
+// 字重
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+$font-weight-black: 900;
+
+// 过渡
+$transition-fast: 0.15s ease;
+$transition-base: 0.2s ease-out;
+$transition-slow: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Z-index
+$z-modal: 1000;
+$z-popup: 900;
+$z-navbar: 800;
+$z-tabbar: 700;
+$z-tooltip: 600;
+$z-dropdown: 500;

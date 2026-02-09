@@ -1,0 +1,327 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.profile-page {
+  min-height: 100vh;
+  padding: 16rpx 16rpx 180rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// 用户信息卡片
+.user-card {
+  @include gradient-card($gradient-purple, $shadow-purple);
+  padding: $spacing-xl;
+  margin-bottom: $spacing-lg;
+  @include flex-center;
+  gap: $spacing-lg;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.avatar-large {
+  width: 120rpx;
+  height: 120rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  @include flex-center;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-black;
+  border: 4rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  display: block;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-black;
+  color: $bg-white;
+  margin-bottom: $spacing-xs;
+  @include text-ellipsis(1);
+}
+
+.user-join-date {
+  font-size: $font-size-sm;
+  opacity: 0.9;
+}
+
+// 荣誉展示
+.honor-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.honor-item {
+  background: $bg-white;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  @include flex-center;
+  gap: $spacing-md;
+  box-shadow: $shadow-sm;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.honor-icon-wrapper {
+  width: 80rpx;
+  height: 80rpx;
+  background: #FEF3C7;
+  border-radius: 50%;
+  @include flex-center;
+}
+
+.honor-icon {
+  font-size: 48rpx;
+}
+
+.honor-text {
+  flex: 1;
+}
+
+.honor-label {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $text-secondary;
+  margin-bottom: $spacing-xs;
+}
+
+.honor-value {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-black;
+  color: #B45309;
+  @include text-ellipsis(1);
+}
+
+// 菜单区域
+.menu-section {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  margin-bottom: $spacing-lg;
+}
+
+.menu-item {
+  @include flex-between;
+  @include flex-center;
+  padding: $spacing-lg;
+  border-bottom: 2rpx solid #F3F4F6;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.menu-icon-wrapper-blue,
+.menu-icon-wrapper-pink {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  @include flex-center;
+  margin-right: $spacing-md;
+}
+
+.menu-icon-wrapper-blue {
+  background: #DBEAFE;
+}
+
+.menu-icon-wrapper-pink {
+  background: #FCE7F3;
+}
+
+.menu-icon {
+  font-size: 48rpx;
+}
+
+.menu-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.menu-title {
+  display: block;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.menu-subtitle {
+  font-size: $font-size-xs;
+  color: $text-tertiary;
+  @include text-ellipsis(1);
+}
+
+.menu-arrow {
+  font-size: 48rpx;
+  color: $text-tertiary;
+  font-weight: 200;
+}
+
+// 模态框
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10rpx);
+  z-index: $z-modal;
+  padding: $spacing-lg;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: $bg-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $spacing-xl;
+  max-width: 600rpx;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  animation: pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-header {
+  @include flex-between;
+  margin-bottom: $spacing-lg;
+}
+
+.modal-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+}
+
+.modal-close {
+  font-size: $font-size-xl;
+  color: $text-tertiary;
+}
+
+.modal-body {
+  .section-label {
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $text-secondary;
+    margin-bottom: $spacing-md;
+  }
+
+  .form-row {
+    display: flex;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+
+  .form-input {
+    flex: 1;
+    background: #F9FAFB;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    font-size: $font-size-base;
+    border: 2rpx solid #E5E7EB;
+  }
+
+  .form-input-small {
+    width: 120rpx;
+    background: #F9FAFB;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    font-size: $font-size-base;
+    border: 2rpx solid #E5E7EB;
+  }
+
+  .emoji-selector {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+    max-width: 480rpx;
+  }
+
+  .emoji-item {
+    background: #F9FAFB;
+    border: 2rpx solid #E5E7EB;
+    border-radius: $radius-sm;
+    padding: $spacing-sm;
+    @include flex-center;
+
+    &.active {
+      background: $primary-pink;
+      border-color: $primary-pink;
+    }
+  }
+
+  .emoji-text {
+    font-size: 40rpx;
+  }
+
+  .add-button {
+    width: 100%;
+    background: $primary-purple;
+    color: $bg-white;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    border-radius: $radius-md;
+    padding: 20rpx;
+    margin-bottom: $spacing-xl;
+    border: none;
+  }
+
+  .items-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  .item-row {
+    @include flex-between;
+    @include flex-center;
+    background: #F9FAFB;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+  }
+
+  .item-icon {
+    font-size: 40rpx;
+    margin-right: $spacing-sm;
+  }
+
+  .item-name {
+    flex: 1;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+  }
+
+  .item-reward,
+  .item-cost {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $primary-pink;
+    margin-right: $spacing-md;
+  }
+
+  .item-delete {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-error;
+  }
+}

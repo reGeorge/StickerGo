@@ -1,0 +1,498 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.home-page {
+  min-height: 100vh;
+  padding: $spacing-lg;
+  padding-bottom: 200rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// 欢迎横幅
+.welcome-banner {
+  @include flex-between;
+  margin-bottom: $spacing-lg;
+}
+
+.welcome-text {
+  flex: 1;
+}
+
+.welcome-title {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.welcome-subtitle {
+  font-size: $font-size-sm;
+  color: $text-secondary;
+}
+
+.avatar {
+  width: 96rpx;
+  height: 96rpx;
+  background: linear-gradient(135deg, #FFE4E6 0%, #FCE7F3 100%);
+  border-radius: 50%;
+  @include flex-center;
+  font-size: 48rpx;
+  border: 4rpx solid $bg-white;
+  box-shadow: $shadow-sm;
+}
+
+// 磁贴卡片
+.magnet-card {
+  background: linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #8B5CF6 100%);
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-pink;
+  margin-bottom: $spacing-lg;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-top {
+  @include flex-between;
+  margin-bottom: $spacing-lg;
+  position: relative;
+  z-index: 2;
+}
+
+.magnet-info {
+  flex: 1;
+}
+
+.magnet-label {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: $spacing-sm;
+  text-transform: uppercase;
+  letter-spacing: 1rpx;
+}
+
+.magnet-count {
+  @include flex-center;
+}
+
+.count-number {
+  font-size: 120rpx;
+  font-weight: $font-weight-black;
+  color: $bg-white;
+  margin-right: $spacing-sm;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.count-emoji {
+  font-size: 60rpx;
+}
+
+.trophy-icon {
+  width: 112rpx;
+  height: 112rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  @include flex-center;
+  font-size: 56rpx;
+  backdrop-filter: blur(20rpx);
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.progress-section {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  backdrop-filter: blur(20rpx);
+  border: 2rpx solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.progress-header {
+  @include flex-between;
+  margin-bottom: $spacing-sm;
+}
+
+.progress-label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $bg-white;
+}
+
+.progress-value {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.progress-bar-container {
+  height: 12rpx;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50rpx;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #FCD34D 0%, #FBBF24 100%);
+  box-shadow: 0 0 30rpx rgba(253, 224, 71, 0.5);
+  transition: width 0.5s ease-out;
+}
+
+// 快捷操作
+.quick-actions {
+  @include flex-between;
+  margin-bottom: $spacing-lg;
+  gap: $spacing-md;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.action-card {
+  flex: 1;
+  background: $bg-white;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  @include flex-column;
+  @include flex-center;
+  @include button-active;
+  box-shadow: $shadow-sm;
+  border: 2rpx solid #FBCFE8;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.action-icon-pink,
+.action-icon-purple {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  @include flex-center;
+  font-size: 40rpx;
+  margin-bottom: $spacing-sm;
+}
+
+.action-icon-pink {
+  background: #FBCFE8;
+  color: #EC4899;
+}
+
+.action-icon-purple {
+  background: #E9D5FF;
+  color: #8B5CF6;
+}
+
+.action-label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $text-secondary;
+}
+
+// 任务列表
+.tasks-section {
+  margin-bottom: $spacing-lg;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $spacing-md;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.task-card {
+  position: relative;
+  background: $bg-white;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  @include flex-center;
+  @include flex-column;
+  box-shadow: $shadow-sm;
+  border: 2rpx solid #F3F4F6;
+  @include button-active;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.task-icon {
+  font-size: 80rpx;
+  margin-bottom: $spacing-sm;
+}
+
+.task-title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  margin-bottom: $spacing-xs;
+  text-align: center;
+  width: 100%;
+  @include text-ellipsis(1);
+}
+
+.task-reward {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $primary-pink;
+  text-align: center;
+  width: 100%;
+  @include text-ellipsis(1);
+}
+
+.completed-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(16, 185, 129, 0.1);
+  @include flex-center;
+  font-size: 100rpx;
+  color: $color-success;
+  border: 4rpx solid rgba(16, 185, 129, 0.3);
+}
+
+.task-card.completed {
+  opacity: 0.7;
+}
+
+// 模态框
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10rpx);
+  @include flex-center;
+  z-index: $z-modal;
+  padding: $spacing-lg;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 600rpx;
+  background: $bg-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $spacing-xl;
+  box-sizing: border-box;
+  animation: pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-header {
+  @include flex-between;
+  margin-bottom: $spacing-lg;
+}
+
+.modal-title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+}
+
+.modal-close {
+  font-size: $font-size-xl;
+  color: $text-tertiary;
+}
+
+.modal-body {
+  .form-label {
+    display: block;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    color: $text-secondary;
+    margin-bottom: $spacing-sm;
+  }
+
+  .form-textarea {
+    width: 100%;
+    background: #F9FAFB;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    font-size: $font-size-base;
+    color: $text-primary;
+    border: 2rpx solid #F3F4F6;
+    min-height: 180rpx;
+    margin-bottom: $spacing-lg;
+
+    .placeholder {
+      color: $text-tertiary;
+    }
+  }
+
+  .amount-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacing-xl;
+  }
+
+  .amount-item {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    border: 4rpx solid #F3F4F6;
+    background: $bg-white;
+    @include flex-center;
+    transition: all $transition-fast;
+
+    &.active {
+      background: $primary-pink;
+      border-color: $primary-pink;
+      transform: scale(1.1);
+
+      .amount-number {
+        color: $bg-white;
+      }
+    }
+  }
+
+  .amount-number {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    color: $text-tertiary;
+  }
+
+  .submit-button {
+    width: 100%;
+    background: $primary-pink;
+    color: $bg-white;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    border-radius: $radius-md;
+    padding: 24rpx;
+    box-shadow: $shadow-pink;
+    border: none;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+// 心情模态框
+.mood-modal {
+  text-align: center;
+
+  .mood-header {
+    justify-content: center;
+  }
+
+  .mood-subtitle {
+    font-size: $font-size-xs;
+    color: $text-tertiary;
+    margin-bottom: $spacing-lg;
+  }
+
+  .mood-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+  }
+
+  .mood-card {
+    background: #F9FAFB;
+    border: 4rpx solid transparent;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    @include flex-center;
+    @include flex-column;
+    transition: all $transition-fast;
+    @include button-active;
+
+    &:hover {
+      background: #F3E8FF;
+      border-color: #E9D5FF;
+    }
+  }
+
+  .mood-icon {
+    font-size: 80rpx;
+    margin-bottom: $spacing-sm;
+    filter: drop-shadow(0 2rpx 4rpx rgba(0, 0, 0, 0.1));
+  }
+
+  .mood-label {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    color: $text-secondary;
+  }
+
+  .mood-cancel {
+    font-size: $font-size-sm;
+    color: $text-tertiary;
+    text-decoration: underline;
+  }
+}
+
+.mood-success {
+  text-align: center;
+  padding: $spacing-lg 0;
+
+  .success-animation {
+    width: 256rpx;
+    height: 256rpx;
+    margin: 0 auto $spacing-md;
+    @include flex-center;
+    font-size: 128rpx;
+  }
+
+  .success-title {
+    display: block;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $primary-purple;
+    margin-bottom: $spacing-xs;
+  }
+
+  .success-subtitle {
+    display: block;
+    font-size: $font-size-base;
+    color: $text-secondary;
+    margin-bottom: $spacing-md;
+  }
+
+  .success-reward {
+    display: inline-block;
+    background: #FEF3C7;
+    color: #F59E0B;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: 50rpx;
+    font-weight: $font-weight-bold;
+    box-shadow: $shadow-sm;
+    margin-bottom: $spacing-lg;
+  }
+
+  .success-button {
+    width: 100%;
+    background: $primary-purple;
+    color: $bg-white;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    border-radius: $radius-md;
+    padding: 24rpx;
+    box-shadow: $shadow-purple;
+    border: none;
+  }
+}

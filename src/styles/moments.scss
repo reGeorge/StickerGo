@@ -1,0 +1,186 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.moments-page {
+  min-height: 100vh;
+  padding: 16rpx 16rpx 180rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// 顶部操作栏
+.header-actions {
+  @include flex-between;
+  align-items: flex-start;
+  margin-bottom: $spacing-xl;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-info {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.header-title {
+  display: block;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  margin-bottom: $spacing-xs;
+  @include text-ellipsis(1);
+}
+
+.header-subtitle {
+  font-size: $font-size-sm;
+  color: $text-secondary;
+}
+
+.export-button {
+  background: linear-gradient(135deg, #EC4899 0%, #F43F5E 100%);
+  color: $bg-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-sm;
+  border: none;
+  box-shadow: $shadow-pink;
+}
+
+// 时间线
+.timeline {
+  position: relative;
+}
+
+.timeline-group {
+  margin-bottom: $spacing-xl;
+}
+
+.timeline-date {
+  margin-bottom: $spacing-lg;
+}
+
+.date-text {
+  display: inline-block;
+  background: linear-gradient(135deg, #EC4899 0%, #F43F5E 100%);
+  color: $bg-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  padding: $spacing-xs $spacing-md;
+  border-radius: 50rpx;
+  box-shadow: $shadow-sm;
+}
+
+.timeline-items {
+  position: relative;
+  padding-left: 48rpx;
+}
+
+.timeline-items::before {
+  content: '';
+  position: absolute;
+  left: 28rpx;
+  top: 0;
+  bottom: 0;
+  width: 4rpx;
+  background: linear-gradient(180deg, #EC4899 0%, #8B5CF6 100%);
+  border-radius: 2rpx;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: $spacing-lg;
+  padding-left: $spacing-lg;
+
+  &.last {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -60rpx;
+  top: 8rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: $bg-white;
+  border: 4rpx solid #EC4899;
+  @include flex-center;
+  font-size: 32rpx;
+  box-shadow: $shadow-sm;
+  transition: border-color 0.2s ease;
+}
+
+.timeline-content {
+  background: $bg-white;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  box-shadow: $shadow-sm;
+  border: 2rpx solid #F3F4F6;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.timeline-header {
+  @include flex-between;
+  margin-bottom: $spacing-sm;
+}
+
+.timeline-time {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $text-tertiary;
+}
+
+.timeline-reward {
+  @include flex-center;
+  gap: $spacing-xs;
+}
+
+.reward-number {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $primary-pink;
+  transition: color 0.2s ease;
+}
+
+.reward-emoji {
+  font-size: $font-size-base;
+}
+
+.timeline-description {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+  line-height: 1.6;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+// 空状态
+.empty-state {
+  text-align: center;
+  padding: 120rpx $spacing-lg;
+}
+
+.empty-icon {
+  display: block;
+  font-size: 128rpx;
+  margin-bottom: $spacing-lg;
+}
+
+.empty-text {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $text-secondary;
+  margin-bottom: $spacing-xs;
+}
+
+.empty-subtitle {
+  font-size: $font-size-sm;
+  color: $text-tertiary;
+}
